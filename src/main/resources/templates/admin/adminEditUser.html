@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>Gym Management System - Insert New User</title>
+		<link rel="stylesheet"
+		href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+		crossorigin="anonymous">
+		
+		<style>
+			body {
+			  margin: 0;
+			  padding: 0;
+			  font-family: sans-serif;
+			  background-image: url("../images/welcome.jfif");
+			  background-size: 200vh;
+			  }
+			  
+		</style>
+			
+	</head>
+	<body>
+		<header>
+			<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+	  <!-- Brand -->
+	  <a class="navbar-brand" href="#"> Dashboard</a>
+	
+	  <!-- Toggler/collapsibe Button -->
+	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+	    <span class="navbar-toggler-icon"></span>
+	  </button>
+	
+	  <!-- Navbar links -->
+	  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+	    <ul class="navbar-nav">
+	      <li class="nav-item">
+	        <a class="nav-link" th:href="@{/admin/users}">Users</a>     
+	      </li>
+	      <li class="nav-item">
+	        <a class="nav-link" th:href="@{/admin/trainers}">Trainer</a>        
+	      </li>
+	      <li>
+			<a class="nav-link" th:href="@{/admin/equipments}">Equipments</a>
+		  </li>
+		  <li>
+			      	<a class="nav-link" th:href="@{/admin/payments}">Payments</a>
+			      </li>
+	    </ul>
+	  </div>
+	</nav>
+	<br>
+	<br>
+	</header>
+		<main>
+			<div class = "container">
+			<div class = "row">
+				<div class ="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
+					<h1 class = "text-center"> Update User </h1>
+					<div class = "card-body">
+					<form th:action="@{/admin/users/{id} (id=${users.user_id})}" th:object="${users}" method="POST">
+					
+						<div class ="form-group">
+								<label> User Name </label>
+								<input
+								type = "text"
+								name = "name"
+								th:field = "*{name}"
+								class = "form-control"
+								placeholder="Enter User Full Name" 
+								/>
+						</div>
+						<div class ="form-group">
+								<label> Gender:   </label><br>
+								<input
+								type = "radio"
+								name = "gender"
+								value = "male"
+								th:field = "*{gender}"
+								/>
+								<label for="male">Male</label>
+								<input 
+								type="radio" 
+								id="female" 
+								name="gender" 
+								value="female" 
+								th:field="*{gender}"
+								/>
+								<label for="female">Female</label><br><br>
+						</div>
+						
+						<div class ="form-group">
+								<label> Age </label>
+								<input
+								type = "number"
+								name = "age"
+								th:field = "*{age}"
+								class = "form-control"
+								placeholder="Enter User Age" 
+								/>
+						</div>
+						<div class ="form-group">
+								<label> Date of Joining </label>
+								<input 
+								type="date" 
+								id="date_of_join" 
+								name="date_of_join" 
+								required 
+								th:field="*{join_date}"
+								class="form-control"
+								/>
+						</div>
+						<div class ="form-group">
+								<label> Phone Number </label>
+								<input 
+								type="tel" 
+								id="phone" 
+								name="phone" 
+								pattern="[0-9]{10}" 
+								required 
+								th:field="*{phone_no}"
+								class="form-control"
+								/>
+						</div>
+						<div class ="form-group">
+								<label> Address </label>
+								<textarea 
+								id="address" 
+								name="address" 
+								th:field="*{address}"
+								class="form-control"
+								>
+								</textarea>
+						</div>
+						<div class ="form-group">
+								<label> Membership Status </label>
+								<select 
+								id="status" 
+								name="status" 
+								th:field="*{member_status}"
+								class="form-control"
+								>
+									<option value="1">Active</option>
+									<option value="0">Inactive</option>
+								</select>
+						</div>
+						<div class = "box-footer">
+								<button type="submit" class = "btn btn-primary">
+									Submit
+								</button>
+						</div>
+					</form>
+				</div>
+				</div>
+			</div>
+		</div>
+		</main>
+	</body>
+</html>

@@ -1,0 +1,114 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background-image: url("images/welcome.jfif");
+    background-size: 200vh;
+    }
+    
+    header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    }
+    
+    .navbar {
+        display: flex;
+        background-color: #333;
+        color: #fff;
+        padding: 10px 20px;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .navbar-brand {
+        font-size: 24px;
+        margin: 0;
+    }
+
+    .navbar-menu {
+        display: flex;
+        align-items: center;
+    }
+
+    .navbar-menu a {
+        display: block;
+        color: #fff;
+        padding: 10px 20px;
+        text-decoration: none;
+        font-size: 18px;
+        margin-right: 10px;
+    }
+
+    .navbar-menu a:hover {
+        background-color: #555;
+    }
+
+  
+  /* Main styles */
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .card {
+    background-color: #f2f2f2;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    flex-basis: calc(50% - 40px);
+  }
+  
+  .card h2 {
+    margin-top: 0;
+  }
+  
+  form label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  form input[type='text'],
+  form input[type='number'],
+  form input[type='tel'],
+  form select,
+  form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  form input[type='radio'] {
+    display: inline-block;
+    margin-right: 5px;
+  }
+  
+  form input[type='submit'] {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  form input[type='submit']:hover {
+    background-color: #444;
+  }
+  
+  form input[type='submit']:active {
+    background-color: #555;
+  }
+  
+  form textarea {
+    resize: vertical;
+    height: 100px;
+  }
+  

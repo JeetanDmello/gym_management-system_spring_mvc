@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Gym Management System - Insert New trainer</title>
+	<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous">
+	
+	<style>
+			body {
+			  margin: 0;
+			  padding: 0;
+			  font-family: sans-serif;
+			  background-image: url("../images/welcome.jfif");
+			  background-size: 200vh;
+			  }
+	</style>
+		
+</head>
+<body>
+	<header>
+		<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+  <!-- Brand -->
+  <a class="navbar-brand" href="#"> Dashboard</a>
+
+  <!-- Toggler/collapsibe Button -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <!-- Navbar links -->
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" th:href="@{/admin/users}">Users</a>     
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" th:href="@{/admin/trainers}">Trainer</a>        
+      </li>
+      <li>
+			<a class="nav-link" th:href="@{/admin/equipments}">Equipments</a>
+		  </li>
+	  <li>
+		      	<a class="nav-link" th:href="@{/admin/payments}">Payments</a>
+		      </li>
+    </ul>
+  </div>
+</nav>
+<br>
+<br>
+</header>
+	<main>
+		<div class = "container">
+		<div class = "row">
+			<div class ="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
+				<h1 class = "text-center"><hr><b>Create New trainer</b> </h1><hr>
+				<div class = "card-body">
+				<form th:action="@{/admin/trainers}" th:object="${trainers}" method="POST">
+				
+					<div class ="form-group">
+							<label> <b>Trainer Name:</b> </label>
+							<input
+							type = "text"
+							name = "name"
+							th:field = "*{name}"
+							class = "form-control"
+							placeholder="Enter trainer Full Name" 
+							/>
+					</div>
+					<div class ="form-group">
+							<label> <b>Gender: </b>  </label><br>
+							<input
+							type = "radio"
+							name = "gender"
+							value = "male"
+							th:field = "*{gender}"
+							/>
+							<label for="male">Male</label>
+							<input 
+							type="radio" 
+							id="female" 
+							name="gender" 
+							value="female" 
+							th:field="*{gender}"
+							/>
+							<label for="female">Female</label><br><br>
+					</div>
+					
+					<div class ="form-group">
+							<label> <b>Age:</b> </label>
+							<input
+							type = "number"
+							name = "age"
+							th:field = "*{age}"
+							class = "form-control"
+							placeholder="Enter trainer Age" 
+							/>
+					</div>
+					<div class ="form-group">
+							<label><b>Phone Number:</b> </label>
+							<input 
+							type="tel" 
+							id="phone" 
+							name="phone" 
+							pattern="[0-9]{10}" 
+							required 
+							th:field="*{phone_no}"
+							class="form-control"
+							/>
+					</div>
+					<div class ="form-group">
+							<label> <b>Address:</b> </label>
+							<textarea 
+							id="address" 
+							name="address" 
+							th:field="*{address}"
+							class="form-control"
+							>
+							</textarea>
+					</div>
+					<div class ="form-group">
+							<label> Daily WOrking Hours </label>
+							<input 
+							type="number" 
+							id="working_hours" 
+							name="working_hours"  
+							th:field="*{working_hours}"
+							class="form-control"
+							/>
+					</div>
+					<div class ="form-group">
+							<label> Salary </label>
+							<input 
+							type="number" 
+							id="salary" 
+							name="salary" 
+							th:field="*{salary}"
+							class="form-control"
+							/>
+					</div>
+					<div class = "box-footer">
+							<button type="submit" class = "btn btn-primary">
+								Submit
+							</button>
+					</div>
+				</form>
+			</div>
+			</div>
+		</div>
+	</div>
+	</main>
+</body>
+</html>

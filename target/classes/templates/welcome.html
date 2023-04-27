@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>Gym Management System - Login</title>
+    <style>
+        
+      body {
+        font-family: Arial, sans-serif;
+        width: 100%;
+        overflow: hidden;
+        height: 100%;
+      background-image: url("images/welcome.jfif");
+      background-size: 200vh;
+        /* background-color: linear-gradient(0deg, rgba(57,108,118,0.7204131652661064) 18%, rgba(62,62,49,1) 100%);; */
+      }
+      .header {
+        background-color: rgba(0, 0, 0, 0.8);
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+        font-size: 30px;
+      }
+      .content {
+        max-width: 400px;
+        margin: auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        margin-top: 100px;
+        /* margin-left: 50px; */
+        /* float: left; */
+      }
+      input[type="text"], input[type="password"] {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+      button {
+        background-color: #333;
+        color: #fff;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 100%;
+        font-size: 16px;
+      }
+      button:hover {
+        background-color: #555;
+      }
+      a {
+      	
+     	}
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <h1>Gym Management System</h1>
+    </div>
+    <div class="content">
+      <h2>Login</h2>
+      <form th:href = "@{/users}" method="POST">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" placeholder="Enter your username...">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" placeholder="Enter your password...">
+        <button type="submit"> <a class="nav-link" th:href="@{/users}">Log in</a></button>
+      </form>
+    </div>
+  </body>
+</html>

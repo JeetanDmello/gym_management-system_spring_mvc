@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>Gym Programs</title>
+		<link rel="stylesheet"
+			href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+			integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+			crossorigin="anonymous">
+			
+		<style>
+			body {
+			  margin: 0;
+			  padding: 0;
+			  font-family: sans-serif;
+			  background-image: url("../images/welcome.jfif");
+			  background-size: 200vh;
+			  }
+			  
+		</style>
+	</head>
+	
+	<body>
+		<header>
+			<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+			  	<!-- Brand -->
+			  	<a class="navbar-brand" href="#"> Dashboard</a>
+	
+			  	<!-- Toggler/collapsibe Button -->
+			  	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+			    	<span class="navbar-toggler-icon"></span>
+			  	</button>
+			
+			 	<!-- Navbar links -->
+			  	<div class="collapse navbar-collapse" id="collapsibleNavbar">
+			   		<ul class="navbar-nav">
+			      		<li class="nav-item">
+			        		<a class="nav-link" th:href="@{/trainers/home}">Home</a>     
+			      		</li>
+			      		<li class="nav-item">
+			       			<a class="nav-link" th:href="@{/trainers/profile}">Profile</a>        
+			      		</li>
+			      		<li>
+							<a class="nav-link" th:href="@{#}">Logout</a>
+				  		</li>
+			      		<!--
+				  		<li>
+					      	<a class="nav-link" th:href="@{/trainers/payments}">Payments</a>
+					    </li>
+					     -->
+			    	</ul>
+			  	</div>
+			</nav>
+			<br>
+			<br>
+		</header>
+	
+		<main>
+			<div class = "container">
+				<div class = "row">
+					<div class ="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
+						<h1 class = "text-center"> <hr>Profile <hr> </h1>
+						<div class = "row">
+						
+						<div class = "card-body" th:object="${trainers}">
+							<label> Trainer name: </label> <label th:text = "${trainers.name}"></label><br>
+							<label> Password: </label> <label th:text = "${trainers.password}"></label><br>
+							<label> Gender: </label> <label th:text = "${trainers.gender}"></label><br>
+							<label> Age: </label> <label th:text = "${trainers.age}"></label><br>
+							<label> Address: </label> <label th:text = "${trainers.address}"></label><br>
+							<div class = "col-lg-0">
+								<a th:href = "@{/trainers/profile/{id}(id=${trainers.trainer_id})}" class = "btn btn-primary btn-sm mb-3"> Edit Profile</a>
+							</div>
+						</div>
+						
+						
+					</div>
+				</div>
+			</div>
+		</main>
+	</body>
+</html>
